@@ -1,0 +1,54 @@
+DEKLARASI
+    golongan : string
+    jamLembur : integer
+    gajiPokok : integer
+    persentaseLembur : float
+    gajiLembur : integer
+    totalPenghasilan : integer
+
+PSEUDOCODE
+    START
+        // Input data karyawan
+        INPUT golongan
+        INPUT jamLembur
+        
+        // Proses penentuan gaji pokok berdasarkan golongan
+        IF golongan = "A" THEN
+            gajiPokok ← 5000000
+        ELSE IF golongan = "B" THEN
+            gajiPokok ← 6500000
+        ELSE IF golongan = "C" THEN
+            gajiPokok ← 9500000
+        ELSE
+            OUTPUT "Golongan tidak valid"
+            gajiPokok ← 0
+        ENDIF
+        
+        // Proses penentuan persentase lembur berdasarkan jam lembur
+        IF jamLembur = 1 THEN
+            persentaseLembur ← 0.30
+        ELSE IF jamLembur = 2 THEN
+            persentaseLembur ← 0.32
+        ELSE IF jamLembur = 3 THEN
+            persentaseLembur ← 0.34
+        ELSE IF jamLembur = 4 THEN
+            persentaseLembur ← 0.36
+        ELSE IF jamLembur >= 5 THEN
+            persentaseLembur ← 0.38
+        ELSE
+            persentaseLembur ← 0
+        ENDIF
+        
+        // Hitung gaji lembur dan total penghasilan
+        gajiLembur ← gajiPokok × persentaseLembur
+        totalPenghasilan ← gajiPokok + gajiLembur
+        
+        // Output hasil
+        IF gajiPokok > 0 THEN
+            OUTPUT "Golongan: ", golongan
+            OUTPUT "Gaji Pokok: Rp. ", gajiPokok
+            OUTPUT "Jam Lembur: ", jamLembur, " jam"
+            OUTPUT "Gaji Lembur: Rp. ", gajiLembur
+            OUTPUT "Total Penghasilan: Rp. ", totalPenghasilan
+        ENDIF
+    END
